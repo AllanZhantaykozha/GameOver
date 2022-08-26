@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<main class="main">
+    {% for item in game %}
+        <hr class="hr">
+        <h1>{{ item.title }}</h1>
+        <div class="img-desc">
+            <img src="{{ item.photo.url }}" alt="" width="300" class="img">
+            <div class="description">{{ item.description }}</div>
+        </div>
+        
+        <div>{{ item.create_by }}</div>
+    {% endfor %}
+</main>
+{% endblock %}
